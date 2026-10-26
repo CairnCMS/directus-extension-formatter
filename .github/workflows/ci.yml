@@ -17,7 +17,7 @@ permissions:
 
 jobs:
   check:
-    name: Build, Typecheck, Test
+    name: Build, Test, Lint
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -40,3 +40,6 @@ jobs:
 
       - name: Test
         run: npm test
+
+      - name: Lint
+        run: npm run lint

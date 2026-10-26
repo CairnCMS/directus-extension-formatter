@@ -1,0 +1,32 @@
+name: Bug Report
+description: Report a defect in Formatter
+labels:
+  - needs-triage
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Extension version
+      placeholder: 0.1.0
+    validations:
+      required: true
+  - type: input
+    id: directus-version
+    attributes:
+      label: Directus version
+      placeholder: 12.5.1
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: What did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+    validations:
+      required: true
