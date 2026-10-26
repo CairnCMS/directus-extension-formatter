@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Request a Feature
+    url: https://github.com/CairnCMS/directus-extension-formatter/discussions
+    about: Share your ideas for Formatter.
+  - name: Ask a Question
+    url: https://github.com/CairnCMS/directus-extension-formatter/discussions
+    about: Please ask and answer questions here.
