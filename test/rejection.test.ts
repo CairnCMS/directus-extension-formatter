@@ -19,10 +19,14 @@ function thrownBy(fn: () => unknown): unknown {
 describe('toDirectusRejection', () => {
 	it('turns end-user input errors into a Directus Invalid Payload rejection', () => {
 		const rejection = toDirectusRejection(
-			new FormatterError('INVALID_INPUT', 'not a valid phone number for the region', { transform: 'phone.format', index: 2 })
+			new FormatterError('INVALID_INPUT', 'not a valid phone number for the region', {
+				transform: 'phone.format',
+				index: 2,
+			})
 		);
 
 		expect(typeof rejection).toBe('string');
+
 		expect(JSON.parse(rejection as string)).toEqual({
 			name: 'DirectusError',
 			code: 'INVALID_PAYLOAD',
@@ -61,9 +65,9 @@ describe('toDirectusRejection', () => {
 
 describe('the Directus operation handler', () => {
 	it('returns the formatted value', () => {
-		expect(operation.handler({ mode: 'value', transform: 'phone.format', [phoneRegion]: 'US', value: '2015550123' })).toBe(
-			'+12015550123'
-		);
+		expect(
+			operation.handler({ mode: 'value', transform: 'phone.format', [phoneRegion]: 'US', value: '2015550123' })
+		).toBe('+12015550123');
 	});
 
 	it('throws the Invalid Payload rejection for invalid input', () => {

@@ -127,6 +127,7 @@ describe('the built server bundle in an isolate', () => {
 		const rejection = await rejectionOf(value('phone.format', 'abc', { region: 'US' }));
 
 		expect(typeof rejection).toBe('string');
+
 		expect(JSON.parse(rejection as string)).toEqual({
 			name: 'DirectusError',
 			code: 'INVALID_PAYLOAD',
