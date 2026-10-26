@@ -1,0 +1,14 @@
+.DS_Store
+.idea/
+node_modules
+dist
+*.tgz
+
+# Agent context, plans, environment files, and local databases never ship.
+.local/
+policy/
+.claude/
+.codex/
+CLAUDE.md
+**/.env*
+*.db
